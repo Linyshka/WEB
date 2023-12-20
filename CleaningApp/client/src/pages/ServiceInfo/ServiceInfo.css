@@ -1,0 +1,69 @@
+.serviceinfo-container {
+  width: 100% !important;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.serviceinfo-container img {
+  width: 700px;
+  height: 600px;
+}
+
+.service_info {
+  width: 400px;
+}
+
+.service_info h2 {
+  font-size: 4rem;
+  margin-bottom: 0.5rem;
+}
+
+.service_info span {
+  font-size: 3rem;
+}
+
+.service-info_price {
+  font-size: 3rem;
+  margin: 2rem 0;
+}
+
+.service-info_description {
+  font-size: 2rem;
+}
+
+.service_info button {
+  margin-top: 15px;
+  font-size: 1.8rem;
+}
+
+.service-actions {
+  margin-top: 10px;
+  display: flex;
+  gap: 20px;
+}
+
+.utc-time,
+.timezone-time {
+  padding: 10px;
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: rgb(16, 146, 47);
+}
+
+.utc-time-create,
+.timezone-time-create {
+  padding: 5px 0;
+  font-size: 1.8rem;
+  font-weight: normal;
+  color: black;
+}
+
+.utc-time-update,
+.timezone-time-update {
+  padding: 5px 0;
+  font-size: 1.8rem;
+  font-weight: normal;
+  color: black;
+}

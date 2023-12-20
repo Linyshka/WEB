@@ -1,0 +1,10 @@
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+footer{
+  color: black;
+  background: linear-gradient(to top, #8a9ec6, white);
+  font-size: 1.8rem;
+}

@@ -1,0 +1,39 @@
+.auth-container {
+  margin-top: 250px !important;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+  border: 1px solid rgb(66, 67, 161);
+  padding: 15px 20px;
+  border-radius: 5px;
+  background-color: aliceblue;
+  font-size: 1.6rem;
+}
+
+.sign-in-form input {
+  width: 300px;
+  height: 30px;
+  padding: 10px 5px;
+  font-size: 1.9rem;
+}
+
+.form button {
+  align-self: center;
+  font-size: 2rem;
+}
+
+.sign-in {
+  display: flex;
+  gap: 5px;
+  margin-top: 20px;
+  font-size: 2rem;
+}
+
+.sign-in_link {
+  color: #ffa62b;
+  text-decoration: none;
+}

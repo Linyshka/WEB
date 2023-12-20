@@ -1,0 +1,44 @@
+.registration-container {
+  margin-top: 200px !important;
+}
+
+input {
+  border-width: 1px;
+  margin-top: 5px;
+}
+
+label {
+  font-size: 1.7rem;
+}
+
+.errors {
+  color: red;
+  font-size: 1.6rem;
+  max-width: 300px;
+}
+
+input[type="submit"] {
+  align-self: center;
+  border: 0.15rem #005400 solid;
+  background-color: #65afc0;
+  border-radius: 10px;
+  padding: 8px 30px;
+  font-size: 2rem;
+}
+
+.sign-up-form input[type="password"],
+.sign-up-form input[type="text"] {
+  width: 300px;
+  height: 30px;
+  padding: 10px 5px;
+  font-size: 1.9rem;
+}
+
+.css-1pxa9xg-MuiAlert-message {
+  font-size: 2rem;
+}
+
+.css-ptiqhd-MuiSvgIcon-root {
+  width: 2em !important;
+  height: 2em !important;
+}

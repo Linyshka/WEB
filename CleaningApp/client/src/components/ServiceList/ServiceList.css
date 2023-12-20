@@ -1,0 +1,15 @@
+.services {
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  row-gap: 20px;
+}
+
+.service-card p {
+  font-size: 2rem;
+}
+
+.rating {
+  margin-top: 10px;
+}

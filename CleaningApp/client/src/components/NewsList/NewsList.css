@@ -1,0 +1,11 @@
+.news {
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  row-gap: 20px;
+}
+
+.new-card p {
+  font-size: 2rem;
+}

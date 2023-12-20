@@ -1,0 +1,17 @@
+.employee-container img {
+  width: 500px;
+  height: 400px;
+}
+
+.employee-container {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  font-size: 2.2rem;
+}
+
+.employee-information {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}

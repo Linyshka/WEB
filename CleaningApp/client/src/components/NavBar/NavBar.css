@@ -1,0 +1,36 @@
+header {
+  width: 100%;
+  z-index: 2;
+  background: linear-gradient(to bottom, #8a9ec6, white);
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navigation {
+  display: flex;
+  gap: 25px;
+  font-size: 2.2rem;
+}
+
+.navigation a {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+a:hover {
+  color: rgb(36, 87, 36);
+}
+
+.logo {
+  font-size: 2.9rem;
+}
+
+ul, li, a {
+  list-style: none;
+  text-decoration: none;
+  color: black;
+}

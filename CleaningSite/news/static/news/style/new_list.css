@@ -1,0 +1,42 @@
+.news-wrapper {
+    padding-top: 100px;
+}
+
+.news-wrapper h2 {
+    font-size: 3.6rem;
+    font-family: 'Onest', sans-serif;
+    margin-bottom: 20px;
+}
+
+article {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+article img {
+    width: 300px;
+    height: 250px;
+}
+
+article div {
+    margin-right: 15px;
+    margin-left: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 15px;
+}
+
+article div p {
+    line-height: 2.2rem;
+}
+
+article div p:after {
+    content: "...";
+}
+
+footer {
+    background: linear-gradient(to top, #8a9ec6, white);
+}

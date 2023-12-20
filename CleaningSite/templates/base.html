@@ -1,0 +1,98 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Alina Radyukevich"/>
+    <meta name="description" content="This website is a university project about cleaning company"/>
+    <meta name="robots" content="index">
+    <link rel="shortcut icon" href="{% static "Images/logo.png" %}" type="image/png"/>
+    <link rel="stylesheet" href="{% static "style/reset.css" %}">
+    <link rel="stylesheet" href="{% static "style/base.css" %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,700;1,500&family=Onest:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+    <title>{% block title %}{% endblock %}</title>
+    {% block custom_styles %}
+    {% endblock %}
+</head>
+<body>
+<div class="over"></div>
+<header>
+    <div class="wrapper header-wrapper">
+        <div class="menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav>
+            <a class="nav-link" href="{% url "main_page" %}">Home</a>
+            <a class="nav-link" href="{% url "article_list" %}">Articles</a>
+            <a class="nav-link" href="{% url "about_us" %}">About us</a>
+            <a class="nav-link" href="{% url "new_list" %}">News</a>
+            <a class="nav-link" href="{% url "employee_public_list" %}">Contacts</a>
+            <a class="nav-link" href="{% url "privacy_policy" %}">Privacy Policy</a>
+            <a class="nav-link" href="{% url "question_list" %}">FAQ</a>
+            <a class="nav-link" href="{% url "vacancy_list" %}">Vacancies</a>
+            <a class="nav-link" href="{% url "promocode_list" %}">Promo-codes</a>
+            <a class="nav-link" href="{% url 'service_types_list' %}">Services</a>
+            <a class="nav-link" href="{% url 'other' %}">Others</a>
+            {% if request.user.is_cleaner %}
+                <a class="nav-link" href="{% url "order_global_list" %}">Orders</a>
+                <a class="nav-link" href="{% url "feedback_list" %}">Feedbacks</a>
+            {% endif %}
+            {% if request.user.is_manager %}
+                <a class="nav-link" href="{% url "client_info_list" %}">Clients</a>
+                <a class="nav-link" href="{% url "feedback_list" %}">Feedbacks</a>
+                <a class="nav-link" href="{% url "order_global_list" %}">Orders</a>
+                <a class="nav-link" href="{% url 'stat_plot' %}">Show statistics</a>
+            {% endif %}
+            {% if request.user.is_authenticated %}
+                <a class="nav-link" href="{% url "logout" %}">Log out</a>
+            {% else %}
+                <a class="nav-link" href="{% url "login" %}">Login</a>
+            {% endif %}
+        </nav>
+        <div class="timer-wrapper">
+          <time class="timer"></time>
+        </div>
+    </div>
+</header>
+<main>
+    {% block content %}
+    {% endblock %}
+</main>
+<footer>
+    <div class="wrapper footer-wrapper">
+        <div class="footer_contact">
+            <div class="footer__content">
+                <h3 class="footer__title">For cooperation</h3>
+                <a href="mailto:@gmail.com" class="email footer__text">
+                    <img src="{% static "Images/email.png" %}">
+                    clean_service@gmail.com
+                </a>
+                <a href="tel:+375331245672" class="telephone footer__text">
+                    <img src="{% static "Images/phone.png" %}">
+                    +375 (33) 124-56-72
+                </a>
+            </div>
+            <div class="footer__content">
+                <h3 class="footer__title">Our office</h3>
+                <a href="https://maps.app.goo.gl/b1WAMDwVoXBNHsVDA" target="_blank"
+                   class="address first_address footer__text">
+                    <img src="{% static "Images/map.png" %}">
+                    <p class="address_description">ул. Белорусская 41, Минск</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="{% static "js/base.js" %}"></script>
+{% block script %}
+
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if error %}
+        {{ error }}
+    {% endif %}
+    <section>
+        <h2>Order list</h2>
+        <ul>
+            {% for item in object_list %}
+                <li><a href="{% url 'order_detail' client_pk=client_pk pk=item.id %}">{{ item }}</a></li>
+            {% endfor %}
+        </ul>
+    </section>
+    <section>
+        <h2>Order Creation Form</h2>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button>Submit</button>
+        </form>
+    </section>
+
+
+{% endblock %}

@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Main{% endblock %}
+
+{% block custom_styles %}
+    <link rel="stylesheet" href="{% static "main/style/main.css" %}">
+{% endblock %}
+
+{% block content %}
+    <section>
+        <div class="wrapper banner-wrapper">
+            <div class="slider">
+                <div class="list">
+                    <div class="item">
+                        <a href="https://www.ozon.ru/category/shvabry-14618/">
+                            <img src="{% static "main/images/advertisement.jpg" %}" alt="first slide">
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="https://www.ozon.ru/category/shvabry-14618/">
+                            <img src="{% static "main/images/advertisement_2.jpg" %}" alt="second slide">
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="https://www.ozon.ru/category/shvabry-14618/">
+                            <img src="{% static "main/images/advertisement_3.png" %}" alt="third slide">
+                        </a>
+                    </div>
+                </div>
+                <ul class="dots">
+                    <li class="active"></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+            {% if request.user.is_authenticated %}
+                <div class="time_changer">
+                    <label for="">
+                        <input class="sliderTimer" type="number" min="1" value="1">
+                    </label>
+                    <button onclick="setTime()">Set the time interval for slider</button>
+                </div>
+            {% endif %}
+        </div>
+    </section>
+    <section class="news">
+        <div class="wrapper">
+            {% if article_title %}
+                <article id="last-article">
+                    <h2>Look at out last article</h2>
+                    <h3><a href="{% url "article_list" %}">{{ article_title }}</a></h3>
+                    <p>{{ article_description }}</p>
+                </article>
+            {% else %}
+                <p>There is no available articles now.</p>
+            {% endif %}
+        </div>
+    </section>
+    <section id="partners">
+        <div class="wrapper partners-wrapper">
+            <h2>Our partners</h2>
+            <div class="partner-content">
+                <figure>
+                    <figcaption>ООО «ХСХ ХИМИ»</figcaption>
+                    <img src="{% static "main/images/chemie.png" %}" alt="chemie logo">
+                </figure>
+                <figure>
+                    <figcaption>КПУП</figcaption>
+                    <img src="{% static "main/images/factory.png" %}" alt="factory_logo">
+                </figure>
+                <figure>
+                    <figcaption>Nilfisk</figcaption>
+                    <img src="{% static "main/images/nilfisk.png" %}" alt="Nilfisk_logo">
+                </figure>
+                <figure>
+                    <figcaption>Truvox International</figcaption>
+                    <img src="{% static "main/images/truvox.jpg" %}"
+                         alt="truvoxInternational_logo">
+                </figure>
+            </div>
+            <q lang="en">Hello World!</q>
+        </div>
+    </section>
+{% endblock %}
+
+{% block script %}
+    <script src="{% static "main/js/slider.js" %}"></script>
+    <script src="{% static "main/js/birthday.js" %}"></script>
+{% endblock %}

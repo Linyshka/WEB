@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}New list{% endblock %}
+{% block custom_styles %}
+    <link rel="stylesheet" href="{% static "news/style/new_detail.css" %}">
+{% endblock %}
+
+{% block content %}
+    <article>
+        <div class="wrapper detail-wrapper">
+            {% if object.image %}
+                <img src="{{ object.image.url}}" alt="{{ object.title }}">
+            {% endif %}
+            <h3>{{ object.title }}</h3>
+            <p>{{ object.description }}</p>
+        </div>
+    </article>
+{% endblock %}

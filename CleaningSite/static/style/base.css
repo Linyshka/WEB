@@ -1,0 +1,260 @@
+html {
+    scroll-behavior: smooth;
+    font-size: 10px;
+    font-family: 'Montserrat', sans-serif;
+    height: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    color: #000000;
+    background: #FFFFFF;
+    font-weight: 400;
+    font-style: normal;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+body._lock {
+    overflow: hidden;
+}
+
+.over{
+    display: none;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+}
+
+body._lock .over {
+    display: block;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+.timer-wrapper {
+    margin-top: 15px;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    background: linear-gradient(to bottom, #8a9ec6, white);
+}
+
+a:visited {
+    color: blue;
+}
+
+a:focus {
+    color: red;
+}
+
+.wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 80px 20px;
+}
+
+.header-wrapper {
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.nav-link {
+    font-family: 'Onest', sans-serif;
+    font-size: 1.7rem;
+    color: #140f07;
+    transition: all 0.5s ease;
+}
+
+.nav-link:hover {
+    cursor: pointer;
+    color: #29a7c3;
+}
+
+footer{
+    color: black;
+    background: linear-gradient(to bottom, #8a9ec6, white);
+    font-size: 1.8rem;
+}
+
+.footer-wrapper {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer_contact {
+    display: flex;
+    justify-content: space-between;
+    max-width: 740px;
+    flex-grow: 1;
+}
+
+.footer__content {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 32px;
+    max-width: 302px;
+}
+
+.first {
+    max-width: 278px;
+}
+
+.footer__text {
+    display: flex;
+    column-gap: 20px;
+    align-items: center;
+    font-weight: 400;
+    font-size: 2rem;
+    line-height: 2.3rem;
+    letter-spacing: 0.12rem;
+    transition: all 0.5s;
+}
+
+.address_description {
+    width: 260px;
+    font-weight: 400;
+    font-size: 2rem;
+    line-height: 2.3rem;
+    transition: all 0.5s;
+}
+
+.footer__text:hover .address_description,
+.footer__text:hover {
+    color: #077a95;
+}
+
+.footer__text .address_description,
+.footer__text {
+    color: black;
+}
+
+.first {
+    row-gap: 40px;
+}
+
+.first_address {
+    margin-top: 2px;
+}
+
+h1 {
+    font-size: 3.6rem;
+}
+
+h2 {
+    font-size: 3.2rem;
+}
+
+h3 {
+    font-size: 2.4rem;
+}
+
+p {
+    font-size: 1.8rem;
+}
+
+button {
+    border: 0.15rem #005400 solid;
+    background-color: #65afc0;
+    border-radius: 10px;
+    padding: 10px 20px;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.timer {
+    font-size: 2.2rem;
+    margin-top: 30px;
+}
+
+@media (max-width: 900px) {
+    .footer-content {
+        flex-direction: column;
+    }
+
+    .menu-btn {
+        z-index: 15;
+        width: 30px;
+        height: 22px;
+        position: relative;
+        display: block;
+        cursor: pointer;
+    }
+
+    .menu-btn span {
+        width: 30px;
+        height: 2px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: black;
+        transition: all 0.5s;
+    }
+
+    .menu-btn._active span {
+        transform: rotate(90deg);
+        top: 50%;
+    }
+
+    .menu-btn._active span:nth-of-type(2) {
+        left: 10px;
+        top: 50%;
+    }
+
+    .menu-btn._active span:nth-of-type(3) {
+        right: 10px;
+        top: 50%;
+    }
+
+    .menu-btn span:nth-of-type(2) {
+        top: 10px;
+    }
+
+    .menu-btn span:nth-of-type(3) {
+        top: 20px;
+    }
+
+    nav {
+        padding-top: 0;
+        position: fixed;
+        left: -100%;
+        width: 320px;
+        height: 100vh;
+        top: 0;
+        background: #8a9ec6;
+        text-align: center;
+        transition: right 0.5s ease 0s;
+        z-index: 14;
+        flex-direction: column;
+    }
+
+    nav._active {
+        left: 0;
+    }
+}
+

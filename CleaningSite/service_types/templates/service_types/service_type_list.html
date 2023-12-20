@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block custom_styles %}
+    <link rel="stylesheet" href="{% static "service_types/style/service_type.css" %}">
+{% endblock %}
+
+{% block title %}
+    Services
+{% endblock %}
+
+{% block content %}
+    <h1>Services</h1>
+    <section>
+        <div class="wrapper services-wrapper">
+            <form method="GET">
+                <label>
+                    <input class="range" type="range" min="{{ min_cost }}" max="{{ max_cost }}" step="0.01"
+                           name="ranger">
+                </label>
+                <button onclick="filter()">Filter</button>
+            </form>
+
+            <div class="products">
+                {% for item in object_list %}
+                    <article>
+                        <h3>Name: {{ item.name }}</h3>
+                        <p id="common_cost">Cost: {{ item.cost }}</p>
+                        <p id="cost_with_promocode" value="{{ item.cost }}"></p>
+                    </article>
+                {% endfor %}
+            </div>
+            <div id="max_promocode_percent" hidden>{{ max_promocode_percent }}</div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block script %}
+    <script src="{% static "service_types/js/service_type.js" %}"></script>
+{% endblock %}

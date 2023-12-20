@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Order view
+{% endblock %}
+
+{% block content %}
+    <section>
+        <h1>Information about order {{ object.order_code }}</h1>
+        <div>
+            <h2>General</h2>
+            <p>Address: {{ object.client_address }}</p>
+            <p>Added at: {{ object.created_at }}</p>
+            <hr>
+        </div>
+        <div>
+            <h2>Client</h2>
+                <p>First name: {{ client.first_name }}</p>
+                <p>Last name: {{ client.last_name }}</p>
+                <p>Surname: {{ client.surname }}</p>
+                <p>Age: {{ client.age }}</p>
+            <hr>
+        </div>
+        <div>
+            <h2>Cleaners</h2>
+        <ul>
+          {% for cleaner in cleaners %}
+                <li>
+                    <p>{{ cleaner.full_name }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+
+            <hr>
+        </div>
+        <div>
+            <h2>Services</h2>
+            {% for service in service_list %}
+                <p>Name: {{ service.name }}</p>
+                <p>Comment: {{ service.comment }}</p>
+                <p>Service type: {{ service.serv_type }}</p>
+            {% endfor %}
+            <hr>
+        </div>
+    </section>
+{% endblock %}

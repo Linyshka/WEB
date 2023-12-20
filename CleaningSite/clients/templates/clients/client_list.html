@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if message %}
+        {{ message }}
+    {% endif %}
+
+    <section>
+        <h1>Client list</h1>
+        <ul>
+            {% for item in object_list %}
+                <li><a href="{% url 'client_info_detail' pk=item.id %}">{{ item.full_name }}</a></li>
+            {% endfor %}
+        </ul>
+    </section>
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button>Submit</button>
+    </form>
+
+{% endblock %}

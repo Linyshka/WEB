@@ -1,0 +1,44 @@
+.services-wrapper {
+    padding-top: 80px;
+}
+
+form {
+    margin-bottom: 40px;
+}
+
+.products {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fill, 300px);
+    justify-items: center;
+    justify-content: center;
+}
+
+article {
+    width: 300px;
+    height: 150px;
+    border: 1px black solid;
+    padding: 40px 40px;
+    border-radius: 20px;
+    background-color: #90a6d2;
+    box-shadow: -10px 5px 5px #1c1b1b;
+}
+
+article h3:first-letter {
+    text-transform: uppercase;
+}
+
+article p {
+    margin-top: 10px;
+}
+
+@media (max-width: 900px) {
+    .services-wrapper {
+        padding-top: 250px;
+    }
+
+    nav {
+        flex-direction: column;
+        column-gap: 10px;
+    }
+}

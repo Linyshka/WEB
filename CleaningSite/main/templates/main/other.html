@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block custom_styles %}
+    <link rel="stylesheet" href="{% static "main/style/other.css" %}">
+{% endblock %}
+
+{% block title %}
+    Others
+{% endblock %}
+
+{% block content %}
+    <section id="top">
+        <img src="{% static "main/images/bg-paralax.jpg" %}" id="bg"/>
+        <img src="{% static "main/images/woman.png" %}" id="woman"/>
+        <img src="{% static "main/images/clean_1.png" %}" id="clean_left"/>
+        <img src="{% static "main/images/clean_2.png" %}" id="clean_right"/>
+    </section>
+    <section>
+        <div class="wrapper">
+            <form id="task-form">
+                <label>
+                    Студенческий билет</label>
+                <input name="studentId" id="studentId">
+
+                <label>
+                    Фамилия</label>
+                <input name="lastName" id="lastName">
+
+                <label>
+                    Имя</label>
+                <input name="firstName" id="firstName">
+
+                <label>
+                    Отчество
+                    <input name="surname" id="surname">
+                </label>
+                <label>
+                    Год
+                    <input name="year" id="Год">
+                </label>
+                <input type="submit" value="Submit">
+            </form>
+            <div class="array">
+                <div class="task-result">
+                    <ul id="list-result">
+
+                    </ul>
+                </div>
+                <div>
+                    <ul id="task">
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr>
+    <section>
+        <div class="wrapper">
+            <ol id="employees">
+
+            </ol>
+            <label>
+                Выберите работника
+                <input id="employee_id" type="number" min="1" max="6" value="1">
+            </label>
+
+            <div class="btn-action">
+                <button onclick="getSalary()">Зарплата</button>
+                <button onclick="getRank()">Статус</button>
+                <button onclick="wishBirthday()">С днём рождения</button>
+            </div>
+            <div class="change_rank">
+                <label>
+                    Изменить ранк
+                    <input id="rank" type="text">
+                </label>
+                <button onclick="changeRank()">Изменить</button>
+            </div>
+        </div>
+    </section>
+    <hr>
+    <section>
+        <div class="wrapper">
+            <div id="table_generation">
+                <label>
+                    Введите размер
+                    <input id="size" type="number" min="1" value="1">
+                </label>
+                <label>
+                    Введите n - количество ячеек
+                    <input id="cell_limit" type="number" min="1" value="1">
+                </label>
+                <button onclick="tableGenerate()">Сгенерировать</button>
+            </div>
+            <div class="table_wrapper"></div>
+            <div class="table-actions" hidden>
+                <button onclick="transpose()">Транспонировать</button>
+                <button onclick="addColumn()">Добавить колонку</button>
+                <button onclick="addRow()">Добавить строку</button>
+            </div>
+        </div>
+    </section>
+    <hr>
+    <section>
+        <div class="wrapper">
+            <form id="styling-form">
+                <label>
+                    Хотите изменить стиль страницы?
+                    <input id="change-style" type="checkbox">
+                </label>
+                <div class="form-data">
+
+                </div>
+            </form>
+        </div>
+    </section>
+{% endblock %}
+
+{% block script %}
+    <script src="{% static "main/js/other.js" %}"></script>
+    <script src="{% static "main/js/employeeFlowClases.js" %}"></script>
+    {#    <script src="{% static "main/js/employeeFlowFunctions.js" %}"></script>#}
+    <script src="{% static "main/js/table.js" %}"></script>
+    <script src="{% static "main/js/stylingForm.js" %}"></script>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if message %}
+        {{ message }}
+    {% endif %}
+    {% if error %}
+        {{ error }}
+    {% endif %}
+    <ul>
+        {% for item in object_list %}
+            <li>{{ item.first_name }} {{ item.last_name }} {{ item.applied_at }}</li>
+        {% endfor %}
+    </ul>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button>Submit</button>
+    </form>
+{% endblock %}

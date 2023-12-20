@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "cleaningsite"
+version = "0.0.1"
+description = "Website for cleaning service"
+authors = ["Linyshka <lina.radyukevich98@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+Django = "^4.2.5"
+django-extensions = "^3.2.3"
+pillow = "^10.0.0"
+httpx = "^0.25.0"
+numpy = "^1.25.2"
+matplotlib = "^3.7.3"
+
+[tool.poetry.group.dev.dependencies]
+isort = "^5.12.0"
+ipython = "^8.15.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

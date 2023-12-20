@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+	Job opening
+{% endblock %}
+
+{% block custom_styles %}
+    <link rel="stylesheet" href="{% static "vacancies/style/vacancy_list.css" %}">
+{% endblock %}
+
+{% block content %}
+    <div class="wrapper career-wrapper">
+        <h2>Vacancy list</h2>
+        <ul>
+            {% for object in object_list %}
+                <li>
+                    <details>
+                        <summary>{{ object.name }}</summary>
+                        <div class="detail-content">
+                            <p>Specialization: {{ object.specialization }}</p>
+                            <p>Busyness: {{ object.busyness }}</p>
+                            <p>Placement: {{ object.placement }}</p>
+                            <p>Comment: {{ object.comment }}</p>
+                        </div>
+
+                    </details>
+
+                </li>
+            {% endfor %}
+        </ul>
+
+
+    </div>
+
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    Promo-codes
+{% endblock %}
+
+{% block custom_styles %}
+    <link rel="stylesheet" href="{% static "promocodes/style/promocodes_list.css" %}">
+{% endblock %}
+
+{% block content %}
+    <section>
+        <div class="wrapper promo-wrapper">
+            <h1>Our active promo-codes</h1>
+            <ul>
+                {% for object in object_list %}
+                    {% if not object.is_archived %}
+                        <li>
+                            <article>
+                                <h3>Name: {{ object.name }}</h3>
+                                <p>Active from: {{ object.created_at }} and till {{ object.finish_date }}</p>
+                                <details>
+                                    <summary>Description:</summary>
+                                    {{ object.conditions }}
+                                </details>
+                            </article>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+
+        </div>
+    </section>
+{% endblock %}

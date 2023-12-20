@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Contacts{% endblock %}
+{% block custom_styles %}
+    <link rel="stylesheet" href="{% static "employee/style/employees_list.css" %}">
+{% endblock %}
+
+{% block content %}
+    <section>
+        <div class="wrapper employee-wrapper">
+            {% for object in object_list %}
+                <div class="card-wrapper">
+                    <div class="card">
+                        <h3>{{ object.first_name }} {{ object.last_name }} {{ object.surname }}</h3>
+                        {% if object.image %}
+                            <img src="{{ object.image.url }}" alt="employee image" height="300px" width="400px">
+                        {% endif %}
+                        {% if object.email %}
+                            <p>Email: {{ object.email }}</p>
+                        {% endif %}
+                        <p>Specializations:</p>
+                        {% for specialization in object.specializations.all %}
+                            <p>{{ specialization.name }}</p>
+                        {% endfor %}
+
+                        <p>{{ object.experience }} years</p>
+                        <p>{{ object.date_of_birth }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+
+{% endblock %}
+
+{% block script %}
+    <script src="{% static "employee/js/employeeList.js" %}"></script>
+{% endblock %}

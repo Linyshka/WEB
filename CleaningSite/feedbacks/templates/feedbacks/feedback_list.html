@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}
+	Feedback List
+{% endblock %}
+
+{% block content %}
+    <section>
+        <h1>Our feedbacks</h1>
+        {% for object in object_list %}
+            <article>
+                <h3>Client: {{ object.client_name }}</h3>
+                <strong>Mark: {{ object.mark }}</strong>
+                <p>Comment: {{ object.content }}</p>
+                <small>Added at{{ object.added_at }}</small>
+            </article>
+            <hr>
+        {% endfor %}
+        <form action="{% url "feedback_detail" %}">
+            <button>Create new feedback</button>
+        </form>
+    </section>
+{% endblock %}

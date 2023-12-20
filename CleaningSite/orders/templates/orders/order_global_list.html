@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    All orders
+{% endblock %}
+
+{% block content %}
+    <section>
+        <h1>All orders</h1>
+        {% for object in object_list %}
+            <article>
+                <p>Order code: {{ object.order_code }}</p>
+                <p>client_address: {{ object.client_address }}</p>
+                <p>Cost: {{ object.cost }}</p>
+                <p>Created at: {{ object.created_at }}</p>
+                <p><a href="{% url 'client_info_detail' pk=object.client_data.id %}">{{ object.client_data }}</a></p>
+                <p><a href="{% url 'order_detail_info' pk=object.id  %}">More about order</a></p>
+                <hr>
+            </article>
+        {% endfor %}
+    </section>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Articles{% endblock %}
+{% block custom_styles %}
+    <link rel="stylesheet" href="{% static "articles/css/article_list.css" %}">
+{% endblock %}
+
+{% block content %}
+    <div class="wrapper articles-wrapper">
+        {% for article in object_list %}
+            <article itemscope itemtype="http://schema.org/Article">
+                <h3 itemprop="headline">{{ article.title }}</h3>
+                <p itemprop="description">{{ article.description }}</p>
+                <time datetime="{{ article.added_at }}" itemprop="datePublished">{{ article.added_at }}</time>
+            </article>
+        {% endfor %}
+    </div>
+    <div class="background"></div>
+{% endblock %}

@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}About us{% endblock %}
+{% block custom_styles %}
+    <link rel="stylesheet" href="{% static "main/style/about_company.css" %}">
+{% endblock %}
+
+{% block content %}
+    <section>
+        <div class="wrapper logo-wrapper">
+            <div class="animation">
+                <div class="logo"></div>
+            </div>
+            <img src="{% static "main/images/logo.jpg" %}">
+            <p>
+                ПРИГЛАШАЕМ К ДОЛГОСРОЧНОМУ СОТРУДНИЧЕСТВУ! <br>
+                Профессиональный клининг на регулярной основе – это то, что нужно вашей компании. постоянным клиентам мы
+                предлагаем гибкую систему скидок, удобные условия оплаты, взаимовыгодное сотрудничество. Для того, чтобы
+                получить высокое качество сервиса и избавить себя от лишних хлопот, достаточно просто связаться с нами.
+            </p>
+        </div>
+    </section>
+    <section class="video">
+        <div class="wrapper video-wrapper">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/MBrkgDc23pU?si=W5H1PTHICU9Ictn3"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+            <div class="history">
+                <h2>Our history</h2>
+                <ol>
+                    <li>
+                        <div>
+                            <h4>2012</h4>
+                            <p>The time when our company was founded.</p>
+                        </div>
+
+                    </li>
+                    <li>
+                        <div>
+                            <h4>2014</h4>
+                            <p>The first thousand of employees were onboarded.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <h4>2020</h4>
+                            <p>We became the leader of medicine services in the world.</p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="wrapper">
+            <table>
+                <caption>Our contacts</caption>
+                <tr>
+                    <th id="req_type">requisite type</th>
+                    <th id="variant">variants</th>
+                    <th id="data">data</th>
+                </tr>
+                <tr>
+                    <td headers="req_type" rowspan="2">Phone</td>
+                    <td headers="variant">MTC</td>
+                    <td headers="data">+375 (33) 341-56-12</td>
+                </tr>
+                <tr>
+                    <td headers="variant">A1</td>
+                    <td headers="data">+375 (29) 341-56-12</td>
+                </tr>
+                <tr>
+                    <td headers="req_type" rowspan="2">Email</td>
+                    <td headers="variant">Gmail</td>
+                    <td headers="data">cleaning@gmail.com</td>
+                </tr>
+                <tr>
+                    <td headers="variant">Mail</td>
+                    <td headers="data">cleaning@mail.ru</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+    <section>
+        <div class="wrapper certificate-wrapper">
+            <h2>Our sertificate</h2>
+            <div class="certificate">
+                <p>Сертификат о членстве в РКА (Реестр клиниговых агенств) ассоциация КЛИНПОМОЩЬ</p>
+                <div>
+                    <h4>Единый реестр клинеров</h4>
+                    <h3>Свидетельство</h3>
+                    <h5> о внесении сведений</h5>
+                    <small>г. Минск</small>
+                    <small>22 октября 2019 г.</small>
+                </div>
+                <p><b>Общество с ограниченной ответственностью "Клиннинг Технологии"</b></p>
+                <p>(ИНН 77313-40252)</p>
+                <p><b><u>Peeстровый номер: 8241</u></b></p>
+                <br>
+                <p>Осауленко А.П.</p>
+                <p>Директор Ассоциации "КлинПомощь"</p>
+                <hr>
+                <p><small>Ассоциация "Объединение клиннинговых провайдеров в сфере выездного клиннинга
+                    "КлинПомощь" 101000, г. Москва, ул. Мясцницкая, дом 47 Тел. +7 (499) 678-12-03 email:
+                    clinoffice@gmail.com</small></p>
+            </div>
+        </div>
+    </section>
+{% endblock %}

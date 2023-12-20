@@ -1,0 +1,27 @@
+.privacy-wrapper {
+    padding-top: 120px;
+}
+
+h1 {
+    margin-bottom: 15px;
+}
+
+hr:nth-child(6) {
+    clear: left;
+}
+
+p {
+    font-size: 2rem;
+    margin: 20px 0 20px 15px;
+    line-height: 22px;
+    word-break: break-word;
+}
+
+.incut {
+    float: left;
+    width: 400px;
+    background: #b8c8e7;
+    padding: 5px;
+    margin: 5px 10px 5px 0;
+    border: 2px solid #333;
+}

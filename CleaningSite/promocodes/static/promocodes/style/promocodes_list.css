@@ -1,0 +1,33 @@
+.promo-wrapper {
+    padding-top: 100px;
+    font-size: 2.3rem;
+}
+
+h1 {
+    font-size: 3.6rem;
+}
+
+article {
+    background-color: #8a9ec6;
+    border: 1px black solid;
+    width: 30%;
+    margin-top: 30px;
+    padding: 20px 15px;
+    border-radius: 30px;
+    font-size: 2.2rem;
+    line-height: 2.5rem;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.87);
+}
+
+li:first-child article {
+    background-color: #9fb0ce;
+}
+
+li:last-child article {
+    background-color: #89a1c9;
+    color: #02404f;
+}
+
+li:nth-child(even) {
+    font-family: 'Young Serif', serif;
+}

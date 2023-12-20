@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}New list{% endblock %}
+{% block custom_styles %}
+    <link rel="stylesheet" href="{% static "news/style/new_list.css" %}">
+{% endblock %}
+
+{% block content %}
+    <section>
+        <div class="wrapper news-wrapper">
+            <h2>News</h2>
+            {% for new in object_list %}
+                <article>
+                    {% if new.image %}
+                        <img src="{{ new.image.url }}" alt="{{ new.title }}">
+                    {% endif %}
+                    <div>
+                        <h3>{{ new.title }}</h3>
+                        <p>{{ new.short_description }}</p>
+                        <form action="{% url "new_detail" pk=new.pk %}">
+                            <button>Read more</button>
+                        </form>
+                    </div>
+                </article>
+            {% endfor %}
+        </div>
+    </section>
+
+
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}FAQ{% endblock %}
+
+{% block custom_styles %}
+    <link rel="stylesheet" href="{% static "questions/style/question_list.css" %}">
+{% endblock %}
+
+{% block content %}
+    <div class="wrapper question-wrapper">
+        <div class="question-definition">
+            <h2>Definitions</h2>
+            <dl>
+                <dt>Cleaning</dt>
+                <dd>Cleaning is the process of removing unwanted substances, such as dirt, infectious agents, and
+                    other
+                    impurities, from an object or environment. Cleaning is often performed for aesthetic, hygienic,
+                    functional,
+                    environmental, or safety purposes. Cleaning occurs in many different contexts, and uses many
+                    different
+                    methods. Several occupations are devoted to cleaning.
+                </dd>
+                <dt>Bacteria</dt>
+                <dd>Bacteria is a member of a large group of unicellular microorganisms which have cell walls but
+                    lack
+                    organelles and an organized nucleus, including some that can cause disease.
+                </dd>
+            </dl>
+        </div>
+
+        <div class="question-answered">
+            <h2>FAQS</h2>
+            <div>
+                {% for question in object_list %}
+                    <details>
+                        <summary>{{ question.text }}<br>{{ question.added_at }}</summary>
+                        {{ question.answer }}
+                    </details>
+                {% endfor %}
+            </div>
+        </div>
+
+
+        <h2>Create new question</h2>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Create new question</button>
+        </form>
+    </div>
+{% endblock %}

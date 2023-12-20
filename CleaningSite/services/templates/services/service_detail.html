@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button>Update</button>
+    </form>
+    <form action="{% url 'service_delete' client_pk=object.client_id pk=object.pk %}" method="POST">
+        {% csrf_token %}
+        <button>Delete</button>
+    </form>
+{% endblock %}

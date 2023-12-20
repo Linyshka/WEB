@@ -1,0 +1,250 @@
+.logo-wrapper {
+    padding-top: 120px;
+}
+
+.logo-wrapper img {
+    width: 200px;
+    height: 200px;
+    float: left;
+}
+
+.logo-wrapper p:first-of-type {
+    margin: 30px 220px;
+}
+
+.logo-wrapper p:first-line {
+    color: #ff5c5c;
+    font-weight: bold;
+}
+
+.animation {
+    position: relative;
+}
+
+.logo::before, .logo::after, .logo {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.logo {
+    width: 200px;
+    height: 200px;
+    background: url("../images/logo.jpg") no-repeat 100%/100%;
+    color: #02404f;
+    box-shadow: inset 0 0 0 1px rgb(2, 64, 79);
+    animation: pulsing 2s linear infinite;
+}
+
+.logo::before, .logo::after {
+    content: "";
+    z-index: -1;
+    margin: -5px;
+    box-shadow: inset 0 0 0 4px;
+    animation: clipMe 8s linear infinite;
+}
+
+.logo::before {
+    animation-delay: -4s;
+}
+
+.logo:hover::after, .logo:hover::before {
+    background-color: rgb(2, 64, 79);
+}
+
+@keyframes clipMe {
+    0%, 100% {
+        clip: rect(0px, 220px, 4px, 0px);
+    }
+    25% {
+        clip: rect(0px, 4px, 220px, 0px);
+    }
+    50% {
+        clip: rect(216px, 220px, 220px, 0px);
+    }
+    75% {
+        clip: rect(0px, 220px, 220px, 216px);
+    }
+}
+
+@keyframes pulsing {
+    0%, 100% {
+        transform: scale(0.8);
+    }
+    50% {
+        transform: scale(1);
+    }
+}
+
+.video {
+    background: linear-gradient(to top, #8a9ec6, white);
+}
+
+.video-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.history h2 {
+    margin-bottom: 30px;
+}
+
+.history ol {
+    margin-left: 0;
+    list-style: none;
+    counter-reset: li;
+}
+
+.history ol li {
+    padding: 10px 0 10px 1em;
+    position: relative;
+    left: 1.5em;
+    margin-bottom: 0.75em;
+    background: #E3DEDC;
+}
+
+.history ol li h4 {
+    font-size: 2rem;
+}
+
+.history ol li p {
+    padding: 10px;
+}
+
+.history ol li:before {
+    padding: 30px 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -1.5em;
+    width: 1.875em;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.2rem;
+    background: #D66786;
+    border-bottom-left-radius: 70em;
+    border-top-left-radius: 70em;
+    counter-increment: li;
+    content: counter(li);
+}
+
+section:nth-child(4) {
+    background-color: #8a9ec6;
+}
+
+table {
+    font-size: 1.8rem;
+    border-collapse: collapse;
+    text-align: center;
+    margin: auto;
+}
+
+caption {
+    font-size: 2.6rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+th:first-child {
+    border-top-left-radius: 10px;
+}
+
+th:last-child {
+    border-top-right-radius: 10px;
+    border-right: none;
+}
+
+th, .first {
+    background: #73aade;
+}
+
+.first:last-child {
+    border-bottom: none;
+}
+
+th, td {
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    border-color: #000000;
+    padding: 10px 20px;
+}
+
+td {
+    background: #D8E6F3;
+}
+
+th:first-child {
+    text-align: left;
+}
+
+tr:last-child td:first-child {
+    border-radius: 0 0 0 10px;
+    border-bottom: none;
+}
+
+tr:last-child td:last-child {
+    border-radius: 0 0 10px 0;
+    border-bottom: none;
+}
+
+tr td:last-child {
+    border-right: none;
+}
+
+tr:nth-child(5) > td.mail {
+    border-radius: 0;
+}
+
+tr:nth-child(4) > td.first {
+    border-bottom: none;
+}
+
+.certificate-wrapper h2 {
+    margin-bottom: 20px;
+}
+
+.certificate {
+    text-align: center;
+    width: 600px;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: 1.6rem;
+    border: 30px solid #40c4c8;
+    border-image: url(../images/border.jpg) 30 round round;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-color: #fafafa;
+}
+
+.certificate p {
+    font-size: 1.8rem;
+}
+
+.certificate > div:nth-child(2) h4,
+.certificate > div:nth-child(2) h3 {
+    font-size: 2.3rem;
+    color: #337AB7;
+    margin-bottom: 10px;
+}
+
+.certificate > div:nth-child(2) h3 {
+    font-size: 2.8rem;
+    color: red;
+    text-transform: uppercase;
+}
+
+.certificate > div:nth-child(2) h5 {
+    font-size: 2rem;
+}
+
+.certificate > div:nth-child(3) > p:nth-child(1) {
+    font-size: 2.8rem;
+}

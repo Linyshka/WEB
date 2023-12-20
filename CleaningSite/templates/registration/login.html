@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+
+{% if form.errors %}
+  <p>Your username and password didn't match. Please try again.</p>
+{% endif %}
+
+{% if next %}
+  {% if user.is_authenticated %}
+    <p>Your account doesn't have access to this page. To proceed,
+    please log in with an account that has access.</p>
+  {% else %}
+    <p>Please log in to see this page.</p>
+  {% endif %}
+{% endif %}
+
+<form method="post" action="{% url 'login' %}">
+{% csrf_token %}
+
+    <fieldset>
+        <legend>Welcome back. Input your credentials</legend>
+        <div>
+            <label for="username">Username</label>
+            <input id="username" placeholder="Enter your username" name="username">
+        </div>
+        <div>
+            <label for="password">Password</label>
+            <input id="password" type="password" placeholder="Enter your password" name="password">
+        </div>
+    </fieldset>
+
+<input type="submit" value="Get started" />
+<input type="hidden" name="next" value="{{ next }}" />
+</form>
+    <p><b>If you are not our employee, you cannot log in</b></p>
+{% endblock %}

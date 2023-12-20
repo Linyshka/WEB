@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    Most popular service
+{% endblock %}
+
+{% block content %}
+    <section>
+        <h1>Most popular service</h1>
+        <img src="{{ filename }}" alt="filename">
+        <p><a href="{{ filename }}" download="">Save plot</a></p>
+    </section>
+    <section>
+    <h2>Other statistics</h2>
+    <p>Median cost: {{ median }}</p>
+    <p>Moda cost: {{ mode }}</p>
+    <p>Average cost: {{ average }}</p>
+    <p>Average age {{ age_average }}</p>
+    <p>Median age {{ age_median }}</p>
+
+    </section>
+    <section>
+    <h2>Client list</h2>
+    {% for client in client_list %}
+    	<p>{{ client.first_name }} {{ client.last_name }}</p>
+    {% endfor %}
+    </section>
+{% endblock %}
